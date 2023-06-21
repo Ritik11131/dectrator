@@ -42,7 +42,7 @@ export default function Posts() {
         console.log(value);
         const filtered=[];
         posts.map((obj)=>{
-            obj?.title.toLowerCase().includes(searchText.toLowerCase()) && filtered.push(obj)
+           (obj?.title.toLowerCase().includes(searchText.toLowerCase()) || obj?.category.toLowerCase().includes(searchText.toLowerCase())) && filtered.push(obj)
         })
         searchText.length === 1 ? setFilteredData(posts) : setFilteredData(filtered)
         console.log(filtered);
